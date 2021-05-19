@@ -3,10 +3,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import folium
+from streamlit_folium import folium_static
 import geopandas as gpd
 #from streamlit_folium import folium_static 
 import warnings
 warnings.filterwarnings('ignore')
+import seaborn as sns
+
+st.set_page_config(
+    page_title="My First Streamlit App",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+col1, col2 = st.beta_columns(2)
 
 df = pd.read_csv("schools_combined.csv")
 
@@ -52,7 +61,7 @@ elif my_page == 'page 3':
     map_center = [14.583197, 121.051538]
 
     # Styling the map
-    mymap = folium.map(location=map_center, height=700, width=1000,
+    mymap = folium.Map(location=map_center, height=700, width=1000,
                        tiles="OpenStreetMap", zoom_start=14)
     option_city = st.sidebar.selectbox(
         'Which city',
@@ -70,7 +79,7 @@ elif my_page == 'page 3':
         folium.Marker([lat, lon], popup=name).add_to(mymap)
     folium_static(mymap)
     # display graph
-    st.pyplot(fig)
+    #st.pyplot(fig)
 #st.write(df.head(10))
 
 st.title("Hello")
@@ -88,7 +97,7 @@ data_load_state = st.text('Loading data...')
 df = pd.read_csv("schools_combined.csv")
 st.write(df.head(20))
 
-if st.textbox('Show data', value=True):
+if st.text_input('Show data', value=True):
     st.subheader('Data')
     data_load_state = st.text('Loading data...')
     st.write(df.head(20))
@@ -120,12 +129,13 @@ st.pyplot(fig)
     
     # 6: Adding interactive options: dropdown box
 #Create dropdown box
-option = option = st.selectbox('which region', df['region'].unique())
-
-'You selected: ', option
-
+option = st.selectbox('which region', df['region'].unique())
+st.write(df.columns)
+#'You selected: ', option
+#if option is not None:
 # Filter the entry in the plot
-grade_level = df['region' == option].groupby("year_level")["enrollment"].sum()
+grade_level = df[df['region']==option].groupby("year_level")["enrollment"].sum()
+
 
 # store figure in fig variable
 fig = plt.figure(figsize=(8,6)) 
@@ -141,3 +151,21 @@ plt.xticks(range(len(grade_level.index)), year, rotation=45)
 
 # display graph
 st.pyplot(fig)
+
+tips = sns.load_dataset("tips")
+fig_1 = plt.figure(figsize=(5,3.75))
+ax1 = sns.barplot(x="day", y="total_bill", data=tips, ci = None, color='#5499c7')
+ax1.set_title('Total Bills per Day')
+ax1.set(xlabel='Day', ylabel='Total Bills')
+col1.pyplot(fig_1)
+
+df = pd.DataFrame({'names': ['Mon', 'Tue', 'Wed', 'Thurs'],'h2': [100, 90, 80, 70]})
+colors = df['names'].apply(lambda x: 'red' if x =='Mon' else '#bfc9ca')
+
+fig_2 = plt.figure(figsize=(5,3.75))
+ax2 = sns.barplot(x='names', y='h2', palette=colors,  dodge=False, data=df)
+ax2.set_xticklabels(labels=df['names'], rotation=90, fontsize=15)
+ax2.set_title('Total Bills per Day')
+ax2.set(xlabel='Day', ylabel='Total Bills')
+
+col2.pyplot(fig_2)
