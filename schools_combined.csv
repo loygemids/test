@@ -1,0 +1,12 @@
+,region,province,municipality,division,school_id,school_name,year_level,gender,enrollment,latitude,longitude,ID,Total_Enro,Total_Inst,Rooms_used,Rooms_unused,Type_of_Sc
+0,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 1,male,41,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+1,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 1,female,30,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+2,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 2,male,37,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+3,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 2,female,38,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+4,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 3,male,41,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+5,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 3,female,37,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+6,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 4,male,30,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+7,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 4,female,33,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+8,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 5,male,38,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+9,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 5,female,27,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
+10,Region I - Ilocos Region,Ilocos Norte,Bacarra,Ilocos Norte,100002,Bacarra CES,grade 6,male,25,18.25096389,120.6089583,100002,318,16,12,0,School with no Annexes
